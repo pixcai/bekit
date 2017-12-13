@@ -1,0 +1,29 @@
+{
+  "plugins": [
+    ["module-resolver", {
+      "root": ["."],
+      "alias": {
+        "css": "./assets/css"
+      },
+      "cwd": "babelrc"
+    }],
+    ["wrap-in-js", {
+      "extensions": ["css$", "scss$"]
+    }],
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "lib",
+      "style": false
+    }],
+    "transform-decorators-legacy"
+  ],
+  "presets": ["env", "next/babel", "stage-0"],
+  "env": {
+    "development": {
+      "plugins": ["inline-dotenv"]
+    },
+    "production": {
+      "plugins": ["transform-inline-environment-variables"]
+    }
+  }
+}
