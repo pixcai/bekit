@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import BekitManager from '../core/BekitManager'
+import { observer } from 'mobx-react'
+import Manager from '../core/Manager'
 
-export default class BekitComponent extends React.Component {
+@observer class Component extends React.Component {
 
   static contextTypes = {
-    bekit: PropTypes.instanceOf(BekitManager)
+    bekit: PropTypes.instanceOf(Manager)
   }
 
   get bekit() {
@@ -20,3 +21,5 @@ export default class BekitComponent extends React.Component {
     return this.bekit.store
   }
 }
+
+export default Component

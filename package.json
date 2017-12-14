@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "author": "pixcai<pixcai@163.com>",
   "license": "MIT",
@@ -15,7 +16,6 @@
     "axios": "^0.17.1",
     "cross-env": "^5.1.1",
     "elasticsearch": "^14.0.0",
-    "elasticsearch-browser": "^14.0.0",
     "lodash": "^4.17.4",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",
@@ -35,11 +35,14 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "glob": "^7.1.2",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
     "node-sass": "^4.7.2",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^2.0.9",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.6",
+    "styled-jsx-plugin-sass": "^0.2.2",
     "webpack-bundle-analyzer": "^2.9.1"
   }
 }

@@ -1,22 +1,17 @@
-import Document, {
-  Head,
-  Main,
-  NextScript
-} from 'next/document'
+import Document, { Head, Main, NextScript } from 'next/document'
 import { Layout } from 'antd'
 import elasticsearch from 'elasticsearch'
-import BekitManager from '../core/BekitManager'
-import BekitProvider from '../components/BekitProvider'
-import BekitSidebar from '../components/BekitSidebar'
-import BekitHeader from '../components/BekitHeader'
-import BekitFooter from '../components/BekitFooter'
-import antdStyle from '../node_modules/antd/dist/antd.min.css'
+import Manager from 'core/Manager'
+import Provider from 'components/Provider'
+import Header from 'components/Header'
+import Sidebar from 'components/Sidebar'
+import styles from 'css/styles.less'
 
 export default class GlobalDocument extends Document {
 
   constructor(props) {
     super(props)
-    this.bekit = new BekitManager(new elasticsearch.Client({
+    this.bekit = new Manager(new elasticsearch.Client({
       host: process.env.ES_HOST
     }))
   }
@@ -27,20 +22,18 @@ export default class GlobalDocument extends Document {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" /> 
           <link rel="shortcut icon" type="images/x-icon" href="/static/favicon.png" />
-          <style>{antdStyle}</style>
+          <style>{styles}</style>
         </Head>
         <body>
-          <BekitProvider bekit={this.bekit} className="jsx-bekit">
+          <Provider bekit={this.bekit}>
+            <Header />
             <Layout className="ant-layout-has-sider">
-              <BekitSidebar />
-              <Layout>
-                <BekitHeader />
-                <Layout.Content>
-                  <Main />
-                </Layout.Content>
-              </Layout>
+              <Sidebar />
+              <Layout.Content>
+                <Main />
+              </Layout.Content>
             </Layout>
-          </BekitProvider>
+          </Provider>
           <NextScript />
         </body>
       </html>

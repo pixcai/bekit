@@ -3,7 +3,7 @@ import {
   observable
 } from 'mobx'
 
-export default class BekitManager {
+export default class Manager {
 
   constructor(owner, initialStore) {
     extendObservable(this, {

@@ -1,1 +1,1 @@
-export const ES_FIELD = 'elastic'
+export const ELASTIC_FIELD = 'elastic'

@@ -1,9 +1,14 @@
 import React from 'react'
-import BekitComponent from '../components/BekitComponent'
+import { action } from 'mobx'
+import Component from 'components/Component'
 
-export default class Index extends BekitComponent {
+export default class Index extends Component {
 
   render() {
-    return null
+    return <button onClick={this.onClick}>Hello</button>
+  }
+
+  @action.bound onClick() {
+    console.log('hello world')
   }
 }

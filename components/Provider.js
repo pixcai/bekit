@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Provider } from 'mobx-react'
-import BekitManager from '../core/BekitManager'
+import { Provider as MobxProvider } from 'mobx-react'
+import Manager from '../core/Manager'
 
-export default class BekitProvider extends React.Component {
+export default class Provider extends React.Component {
 
   static childContextTypes = {
-    bekit: PropTypes.instanceOf(BekitManager).isRequired
+    bekit: PropTypes.instanceOf(Manager).isRequired
   }
 
   getChildContext() {
@@ -19,9 +19,9 @@ export default class BekitProvider extends React.Component {
     const { bekit, className, children, ...others } = this.props
 
     return (
-      <Provider {...others}>
+      <MobxProvider {...others}>
         <div className={className}>{children}</div>
-      </Provider>
+      </MobxProvider>
     )
   }
 }
