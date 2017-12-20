@@ -9,3 +9,4 @@ export default class Header extends Component {
     return <Layout.Header>Header</Layout.Header>
   }
 }
+

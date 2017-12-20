@@ -12,7 +12,7 @@ export default class GlobalDocument extends Document {
   constructor(props) {
     super(props)
     this.bekit = new Manager(new elasticsearch.Client({
-      host: process.env.ES_HOST
+      host: process.env.BEKIT_ES_HOST
     }))
   }
 
@@ -40,3 +40,4 @@ export default class GlobalDocument extends Document {
     )
   }
 }
+

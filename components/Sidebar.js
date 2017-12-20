@@ -27,3 +27,4 @@ export default class Sidebar extends Component {
     this.collapsed = collapsed
   }
 }
+

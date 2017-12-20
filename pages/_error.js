@@ -6,3 +6,4 @@ export default class Error extends React.Component {
     return <p>{this.props.statusCode}</p>
   }
 }
+

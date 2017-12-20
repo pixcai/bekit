@@ -1,6 +1,6 @@
 import {
   extendObservable,
-  observable
+  asMap
 } from 'mobx'
 
 export default class Manager {
@@ -8,7 +8,8 @@ export default class Manager {
   constructor(owner, initialStore) {
     extendObservable(this, {
       owner: owner,
-      store: observable.ref(initialStore)
+      store: asMap(initialStore)
     })
   }
 }
+
