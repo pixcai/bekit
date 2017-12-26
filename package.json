@@ -12,7 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "@antv/g2": "^3.0.2-beta.1",
-    "antd": "^3.0.1",
+    "antd": "^3.0.3",
     "axios": "^0.17.1",
     "cross-env": "^5.1.1",
     "elasticsearch": "^14.0.0",

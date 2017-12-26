@@ -5,25 +5,26 @@ import { observable, action } from 'mobx'
 import { observer } from 'mobx-react'
 import Component from './Component'
 
+const { Sider } = Layout
+
 export default class Sidebar extends Component {
 
   @observable collapsed = false
 
   render() {
     return (
-      <Layout.Sider
+      <Sider
         style={{ minHeight: '100vh' }}
         collapsible
         collapsed={this.collapsed}
         onCollapse={this.onCollapse}>
         <Menu theme="dark" mode="inline">
         </Menu>
-      </Layout.Sider>
+      </Sider>
     )
   }
 
   @action.bound onCollapse(collapsed) {
-    console.log(collapsed)
     this.collapsed = collapsed
   }
 }
